@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://prepportal.in" target="_blank">
           <img src={prepPortalLogo} className="logo" alt="Vite logo" width='500px' height='500px'/>
         </a>
       </div>

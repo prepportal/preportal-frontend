@@ -1,22 +1,26 @@
-import prepPortalLogo from './assets/logo.svg'
-import './App.css'
+import { Button } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <div>
-        <a href="https://prepportal.in" target="_blank">
-          <img src={prepPortalLogo} className="logo" alt="Vite logo" width='500px' height='500px'/>
-        </a>
-      </div>
-      <h1>PrepPortal</h1>
-      <div className="card">
-        <p>
-        Elevating Learning, Enriching Futures.
-        </p>
-      </div>
+      <Stack spacing={4} direction="row" align="center">
+        <Button colorScheme="teal" size="xs">
+          Button
+        </Button>
+        <Button colorScheme="teal" size="sm">
+          Button
+        </Button>
+        <Button colorScheme="teal" size="md">
+          Button
+        </Button>
+        <Button colorScheme="teal" size="lg">
+          Button
+        </Button>
+      </Stack>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

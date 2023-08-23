@@ -1,13 +1,23 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
 import "./App.css";
 import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
+import { useState } from "react";
 
 function App() {
+  const isDrawerSidebar = useBreakpointValue({
+    base: true,
+    lg: false,
+  });
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+  const variant = isDrawerSidebar ? "drawer" : "sidebar";
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        base: `"aside nav" "main"`,
+        lg: `"aside nav" "aside main"`,
       }}
       templateColumns={{
         base: "1fr",
@@ -15,37 +25,14 @@ function App() {
       }}
     >
       <GridItem area="nav" paddingX={3}>
-        <NavBar />
+        <NavBar DrawerType={variant} OnClose={toggleSidebar}/>
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          {/* <GenreList
-            selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
-          /> */}
+          <SideBar isOpen={isSidebarOpen} variant={variant} onClose={toggleSidebar}/>
         </GridItem>
       </Show>
       <GridItem area="main">
-        {/* <Box paddingLeft={10}>
-          <GameHeading gameQuery={gameQuery} />
-          <Flex marginBottom={5}>
-            <Box marginRight={5}>
-              <PlatformSelector
-                selectedPlatform={gameQuery.platform}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
-                }
-              />
-            </Box>
-            <SortSelector
-              sortOrder={gameQuery.sortOrder}
-              onSelectSortOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-            />
-          </Flex>
-        </Box> */}
-        {/* <GameGrid gameQuery={gameQuery} /> */}
       </GridItem>
     </Grid>
   );

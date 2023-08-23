@@ -1,12 +1,23 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { HStack, IconButton } from "@chakra-ui/react";
+import { BiMenuAltLeft } from "react-icons/bi";
 import ColorModeSwitch from "./ColorModeSwitch";
-import logo from "../assets/logo.svg";
-import SearchBar from "./Searchbar";
+import SearchBar from "./SearchBar";
 
-const NavBar = () => {
+interface props {
+  DrawerType: string;
+  OnClose: () => void;
+}
+
+const NavBar = ({ DrawerType, OnClose }: props) => {
+  const showBtn = DrawerType === "drawer";
   return (
     <HStack padding="10px">
-      <Image src={logo} alt="logo" boxSize="50px" />
+      {showBtn && (
+        <IconButton
+          icon={<BiMenuAltLeft w={8} h={8} />}
+          variant="ghost"
+          onClick={OnClose} aria-label={""}      />
+      )}
       <SearchBar />
       <ColorModeSwitch />
     </HStack>

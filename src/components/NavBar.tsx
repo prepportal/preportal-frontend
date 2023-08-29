@@ -5,18 +5,17 @@ import SearchBar from "./SearchBar";
 
 interface props {
   DrawerType: string;
-  OnClose: () => void;
+  onShowSidebar: () => void;
 }
 
-const NavBar = ({ DrawerType, OnClose }: props) => {
+const NavBar = ({ DrawerType, onShowSidebar }: props) => {
   const showBtn = DrawerType === "drawer";
   return (
     <HStack padding="10px">
       {showBtn && (
         <IconButton
-          icon={<BiMenuAltLeft w={8} h={8} />}
-          variant="ghost"
-          onClick={OnClose} aria-label={""}      />
+          icon={<BiMenuAltLeft w={10} h={12} />}
+          onClick={onShowSidebar} aria-label={""}      />
       )}
       <SearchBar />
       <ColorModeSwitch />

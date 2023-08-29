@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
+import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
@@ -16,7 +16,7 @@ function App() {
   return (
     <Grid
       templateAreas={{
-        base: `"aside nav" "main"`,
+        base: `"nav" "main"`,
         lg: `"aside nav" "aside main"`,
       }}
       templateColumns={{
@@ -25,13 +25,11 @@ function App() {
       }}
     >
       <GridItem area="nav" paddingX={3}>
-        <NavBar DrawerType={variant} OnClose={toggleSidebar}/>
+        <NavBar DrawerType={variant} onShowSidebar={toggleSidebar}/>
       </GridItem>
-      <Show above="lg">
-        <GridItem area="aside" paddingX={5}>
+        <GridItem area="aside">
           <SideBar isOpen={isSidebarOpen} variant={variant} onClose={toggleSidebar}/>
         </GridItem>
-      </Show>
       <GridItem area="main">
       </GridItem>
     </Grid>

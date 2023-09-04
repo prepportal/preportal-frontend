@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
+import PageFilters from "./components/PageFilters";
 
 function App() {
   const isDrawerSidebar = useBreakpointValue({
@@ -31,6 +32,7 @@ function App() {
           <SideBar isOpen={isSidebarOpen} variant={variant} onClose={toggleSidebar}/>
         </GridItem>
       <GridItem area="main">
+        <PageFilters />
       </GridItem>
     </Grid>
   );

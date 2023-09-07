@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
 import PageFilters from "./components/PageFilters";
-import StreamBox from "./components/StreamBox";
+import StreamBox from "./components/StreamBox/StreamBox";
 
 function App() {
   const isDrawerSidebar = useBreakpointValue({
@@ -12,7 +12,7 @@ function App() {
     lg: false,
   });
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  
+
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   const variant = isDrawerSidebar ? "drawer" : "sidebar";
   return (
@@ -27,14 +27,23 @@ function App() {
       }}
     >
       <GridItem area="nav" paddingX={3}>
-        <NavBar DrawerType={variant} onShowSidebar={toggleSidebar}/>
+        <NavBar DrawerType={variant} onShowSidebar={toggleSidebar} />
       </GridItem>
-        <GridItem area="aside">
-          <SideBar isOpen={isSidebarOpen} variant={variant} onClose={toggleSidebar}/>
-        </GridItem>
+      <GridItem area="aside">
+        <SideBar
+          isOpen={isSidebarOpen}
+          variant={variant}
+          onClose={toggleSidebar}
+        />
+      </GridItem>
       <GridItem area="main">
         <PageFilters />
-        <StreamBox />
+        <StreamBox
+          stream="Artificial Intelligence and Data Science"
+          url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCpHW8PuoJVhrUQRgxh4oXx5xp_ajdbTtLg&usqp=CAU"
+          overlayColor="#1A237E"
+
+        />
       </GridItem>
     </Grid>
   );

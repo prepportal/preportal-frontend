@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
 import PageFilters from "./components/PageFilters";
+import StreamBox from "./components/StreamBox";
 
 function App() {
   const isDrawerSidebar = useBreakpointValue({
@@ -33,6 +34,7 @@ function App() {
         </GridItem>
       <GridItem area="main">
         <PageFilters />
+        <StreamBox />
       </GridItem>
     </Grid>
   );

@@ -24,6 +24,9 @@ const SidebarContent = () => (
     <Image src={logo} alt="logo" boxSize="50px" marginBottom={3}/>
     <Button w="100%">Home</Button>
     <Button w="100%">About</Button>
+    <Button w="100%">Question Papers</Button>
+    <Button w="100%">Notes</Button>
+    <Button w="100%">Syllabus</Button>
     <Button w="100%">Contact</Button>
   </VStack>
 );

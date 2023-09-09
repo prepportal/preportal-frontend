@@ -2,6 +2,7 @@ import { Flex, Spinner } from "@chakra-ui/react";
 import PageFilters from "../components/PageFilters";
 import StreamBox from "../components/StreamBox/StreamBox";
 import useBranches from "../hooks/useBraches";
+import Bg from "../assets/bg.png"
 
 const BranchPage = () => {
   const { data, isLoading, error } = useBranches();
@@ -18,8 +19,8 @@ const BranchPage = () => {
           <StreamBox
             stream={stream.name}
             key={stream.branch_id}
-            url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCpHW8PuoJVhrUQRgxh4oXx5xp_ajdbTtLg&usqp=CAU"
-            overlayColor="#1A237E"
+            url={Bg}
+            // overlayColor="#1A237E"
           />
         ))}
       </Flex>

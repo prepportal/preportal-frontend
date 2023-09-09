@@ -1,13 +1,11 @@
-import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
-import "./App.css";
-import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
+import { useBreakpointValue, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
-import PageFilters from "./components/PageFilters";
-import StreamBox from "./components/StreamBox/StreamBox";
+import NavBar from "../components/NavBar";
+import SideBar from "../components/SideBar";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  const isDrawerSidebar = useBreakpointValue({
+
+const Layout = () => {const isDrawerSidebar = useBreakpointValue({
     base: true,
     lg: false,
   });
@@ -36,16 +34,11 @@ function App() {
           onClose={toggleSidebar}
         />
       </GridItem>
-      <GridItem area="main">
-        <PageFilters />
-        <StreamBox
-          stream="Artificial Intelligence and Data Science"
-          url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCpHW8PuoJVhrUQRgxh4oXx5xp_ajdbTtLg&usqp=CAU"
-          overlayColor="#1A237E"
-
-        />
+      <GridItem area="main" paddingX={3}>
+        <Outlet />
       </GridItem>
     </Grid>
   );
 }
-export default App;
+
+export default Layout

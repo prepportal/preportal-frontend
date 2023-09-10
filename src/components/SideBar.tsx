@@ -22,10 +22,10 @@ const SidebarContent = () => (
   <VStack justify="center" align="center">
     <Image src={logo} alt="logo" boxSize="50px" marginBottom={3} />
     <Button w="90%">Home</Button>
-    <Button w="90%">About</Button>
     <Button w="90%">Question Papers</Button>
     <Button w="90%">Notes</Button>
     <Button w="90%">Syllabus</Button>
+    <Button w="90%">About</Button>
     <Button w="90%">Contact</Button>
   </VStack>
 );

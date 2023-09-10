@@ -13,6 +13,10 @@ const StreamBox = ({ stream, url }: Props) => {
       borderRadius={10}
       bgImage={`url(${url})`}
       bgSize="cover"
+      _hover={{
+        transform: "scale(0.97)",
+        transition: "transform .15s ease-in"
+      }}
     >
       <Text color="white" fontSize={30} fontWeight="bold">
         {stream}

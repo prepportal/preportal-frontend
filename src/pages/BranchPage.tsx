@@ -17,12 +17,12 @@ const BranchPage = () => {
       <PageFilters />
       <Flex flexDirection="column" gap="20px">
         {data?.response.map((stream) => (
-          <Link to={`${stream.code}/`}>
-            <StreamBox
-              stream={stream.name}
-              key={stream.branch_id}
-              url={Bg}
-            />
+          <Link
+            to={`${stream.code}/`}
+            state={{ branch_id: stream.branch_id }}
+            key={stream.branch_id}
+          >
+            <StreamBox stream={stream.name} url={Bg} />
           </Link>
         ))}
       </Flex>

@@ -1,8 +1,9 @@
+import SemesterBox from "../components/SemesterBox/SemesterBox";
 
 const SemesterPage = () => {
   return (
-    <div>SemesterPage</div>
-  )
-}
+    <SemesterBox />
+  );
+};
 
-export default SemesterPage
+export default SemesterPage;

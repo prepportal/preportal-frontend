@@ -8,10 +8,9 @@ import {
   DrawerBody,
   DrawerContent,
   VStack,
-  Image
+  Image,
 } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
-
 
 interface Props {
   onClose: () => void;
@@ -21,7 +20,7 @@ interface Props {
 
 const SidebarContent = () => (
   <VStack justify="center" align="center">
-    <Image src={logo} alt="logo" boxSize="50px" marginBottom={3}/>
+    <Image src={logo} alt="logo" boxSize="50px" marginBottom={3} />
     <Button w="90%">Home</Button>
     <Button w="90%">About</Button>
     <Button w="90%">Question Papers</Button>
@@ -33,7 +32,7 @@ const SidebarContent = () => (
 
 const Sidebar = ({ isOpen, variant, onClose }: Props) => {
   return variant === "sidebar" ? (
-    <Box padding="10px" height='100dvh' top='0' border="1px" position='sticky'>
+    <Box padding="10px" height="100dvh" top="0" border="1px" position="sticky">
       <SidebarContent />
     </Box>
   ) : (

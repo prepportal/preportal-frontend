@@ -20,20 +20,20 @@ interface Props {
 }
 
 const SidebarContent = () => (
-  <VStack>
+  <VStack justify="center" align="center">
     <Image src={logo} alt="logo" boxSize="50px" marginBottom={3}/>
-    <Button w="100%">Home</Button>
-    <Button w="100%">About</Button>
-    <Button w="100%">Question Papers</Button>
-    <Button w="100%">Notes</Button>
-    <Button w="100%">Syllabus</Button>
-    <Button w="100%">Contact</Button>
+    <Button w="90%">Home</Button>
+    <Button w="90%">About</Button>
+    <Button w="90%">Question Papers</Button>
+    <Button w="90%">Notes</Button>
+    <Button w="90%">Syllabus</Button>
+    <Button w="90%">Contact</Button>
   </VStack>
 );
 
 const Sidebar = ({ isOpen, variant, onClose }: Props) => {
   return variant === "sidebar" ? (
-    <Box padding="10px" w="200px">
+    <Box padding="10px" height='100dvh' top='0' border="1px" position='sticky'>
       <SidebarContent />
     </Box>
   ) : (

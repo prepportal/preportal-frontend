@@ -21,7 +21,7 @@ const Layout = () => {const isDrawerSidebar = useBreakpointValue({
       }}
       templateColumns={{
         base: "1fr",
-        lg: "250px 1fr",
+        lg: "300px 1fr",
       }}
     >
       <GridItem area="nav" paddingX={3}>

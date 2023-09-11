@@ -33,6 +33,7 @@ const SemesterBox = ({semester}: Props) => {
         _hover={{
           backgroundColor: '#810CA8', 
           color: '#E5B8F4', 
+          transform: "scale(0.95)",
         }}
       >
         <Text fontSize="70px">{semester}</Text>

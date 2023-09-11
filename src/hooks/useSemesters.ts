@@ -7,10 +7,9 @@ const apiClient = new APIClient<Semester>("semesters/");
 
 const useSemesters = (branch_id: string) =>
   useQuery({
-    queryKey: ["semester", branch_id],
+    queryKey: ["semester"],
     queryFn: () => apiClient.get(branch_id),
     staleTime: ms("24h"),
-    // initialData: branches,
   });
 
 export default useSemesters;

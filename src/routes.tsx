@@ -11,7 +11,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <BranchPage /> },
-      { path: "/:code", element: <SemesterPage /> },
+      { path: "/:brach_code", element: <SemesterPage />},
+      { path: "/:brach_code/:sem_code/", element: <SemesterPage />},
     ],
   },
 ]);

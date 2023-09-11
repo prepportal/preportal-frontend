@@ -10,7 +10,7 @@ const SemesterPage = () => {
   // console.log(data, isLoading, error);
 
   return (
-    <SemesterBox />
+    <SemesterBox semester="S1"/>
   );
 };
 

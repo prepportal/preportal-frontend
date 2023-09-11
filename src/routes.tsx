@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import BranchPage from "./pages/BranchPage";
 import SemesterPage from "./pages/SemesterPage";
+import MenuPage from "./pages/MenuPage";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <BranchPage /> },
       { path: "/:brach_code", element: <SemesterPage />},
-      { path: "/:brach_code/:sem_code/", element: <SemesterPage />},
+      { path: "/:brach_code/:sem_code/", element: <MenuPage />},
     ],
   },
 ]);

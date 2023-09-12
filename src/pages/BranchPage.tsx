@@ -2,7 +2,6 @@ import { Flex, Spinner } from "@chakra-ui/react";
 import PageFilters from "../components/PageFilters";
 import StreamBox from "../components/StreamBox/StreamBox";
 import useBranches from "../hooks/useBraches";
-import Bg from "../assets/bg.png";
 import { Link } from "react-router-dom";
 
 const BranchPage = () => {
@@ -19,10 +18,10 @@ const BranchPage = () => {
         {data?.response.map((stream) => (
           <Link
             to={`${stream.code}/`}
-            state={{ branch_id: stream.branch_id }}
-            key={stream.branch_id}
+            state={{ branch_id: stream.id }}
+            key={stream.code}
           >
-            <StreamBox stream={stream.name} url={Bg} />
+            <StreamBox stream={stream.name} url={stream.bg_url} />
           </Link>
         ))}
       </Flex>

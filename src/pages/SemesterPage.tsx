@@ -24,7 +24,7 @@ const SemesterPage = () => {
           padding="10px"
         >
           {data?.response.map((sem) => (
-            <Link to={`${sem.code}/`} key={sem.semester_id} state={{branch_id: branch_id, semster_id: sem.semester_id}}>
+            <Link to={`${sem.code}/`} key={sem.code} state={{branch_id: branch_id, semster_id: sem.id}}>
             <SemesterBox semester={sem.code}/>
             </Link>
           ))}

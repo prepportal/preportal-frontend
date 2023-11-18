@@ -3,6 +3,7 @@ import PageFilters from "../components/PageFilters";
 import StreamBox from "../components/StreamBox/StreamBox";
 import useBranches from "../hooks/useBraches";
 import { Link } from "react-router-dom";
+import LoginPage from "./LoginPage";
 
 const BranchPage = () => {
   const { data, isLoading, error } = useBranches();
@@ -25,6 +26,7 @@ const BranchPage = () => {
           </Link>
         ))}
       </Flex>
+      <LoginPage />
     </>
   );
 };

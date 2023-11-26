@@ -1,4 +1,4 @@
-import {Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
+import {Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 import PageFilters from "../components/PageFilters";
 import UseSubjects from "../hooks/UseSubjects";
@@ -13,7 +13,6 @@ const SubjectPage = () => {
       <PageFilters />
       <TableContainer>
         <Table variant='simple'>
-          <TableCaption>Imperial to metric conversion factors</TableCaption>
           <Thead>
             <Tr>
               <Th>Name</Th>

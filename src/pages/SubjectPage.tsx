@@ -1,26 +1,45 @@
-import { Flex } from "@chakra-ui/react";
+import {Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 import PageFilters from "../components/PageFilters";
-import StreamBox from "../components/StreamBox/StreamBox";
+import UseSubjects from "../hooks/UseSubjects";
 
 const SubjectPage = () => {
   const location = useLocation();
   const { branch_id, semester_id } = location.state;
+  console.log(branch_id, semester_id)
+  const { data } = UseSubjects(branch_id, semester_id);
   return (
     <>
       <PageFilters />
-      <Flex flexDirection="column" gap="20px">
-        <Link
-          to={`CST202/`}
-          state={{ branch_id: branch_id, semster_id: semester_id }}
-          key="CST202"
-        >
-          <StreamBox
-            stream="CST202"
-            url="https://images.unsplash.com/photo-1682686579976-879b74d6d7ea?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-        </Link>
-      </Flex>
+      <TableContainer>
+        <Table variant='simple'>
+          <TableCaption>Imperial to metric conversion factors</TableCaption>
+          <Thead>
+            <Tr>
+              <Th>Name</Th>
+              <Th>Code</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {
+              data?.response.map((sub) => (
+                <Tr>
+                  <Link to={`${sub.code}/`} key={sub.code} state={{subject_id: sub.id}}>
+                  <Td>{sub.name}</Td>
+                  </Link>
+                  <Td>{sub.code}</Td>
+                </Tr>
+              ))
+            }
+          </Tbody>
+          <Tfoot>
+            <Tr>
+              <Th>Name</Th>
+              <Th>Code</Th>
+            </Tr>
+          </Tfoot>
+        </Table>
+      </TableContainer>
     </>
   );
 };

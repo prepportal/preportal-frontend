@@ -7,7 +7,7 @@ import useSemesters from "../hooks/useSemesters";
 const SemesterPage = () => {
   const location = useLocation();
   const { branch_id } = location.state;
-
+  console.log(branch_id);
   const { data, isLoading, error } = useSemesters(branch_id);
 
   if (error) return null;
@@ -24,7 +24,7 @@ const SemesterPage = () => {
           padding="10px"
         >
           {data?.response.map((sem) => (
-            <Link to={`${sem.code}/`} key={sem.code} state={{branch_id: branch_id, semster_id: sem.id}}>
+            <Link to={`${sem.code}/`} key={sem.code} state={{branch_id: branch_id, semester_id: sem.id}}>
             <SemesterBox semester={sem.code}/>
             </Link>
           ))}

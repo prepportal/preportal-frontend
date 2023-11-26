@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { Pagination } from "../entities/Pagination";
 
 
 interface FetchResponse<T> {
@@ -6,6 +7,7 @@ interface FetchResponse<T> {
   statusCode: number;
   message: string[];
   response: T[];
+  pagination?: Pagination;
 }
 
 const axiosInstance = axios.create({
@@ -28,6 +30,12 @@ class APIClient<T> {
   get = (id: number | string) => {
     return axiosInstance
       .get<FetchResponse<T>>(this.endpoint + id + '/')
+      .then((res) => res.data);
+  };
+
+  getSubjects = (branch_id: string, semester_id: string) => {
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint + branch_id + '/' + semester_id + '/')
       .then((res) => res.data);
   };
 }

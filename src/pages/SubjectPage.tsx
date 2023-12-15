@@ -10,7 +10,7 @@ const SubjectPage = () => {
   const { data } = UseSubjects(branch_id, semester_id);
   return (
     <>
-      <PageFilters />
+      <PageFilters name="Subjects"/>
       <TableContainer>
         <Table variant='simple'>
           <Thead>

@@ -9,7 +9,7 @@ const MenuPage = () => {
   console.log(branch_id, semester_id);
   return (
     <>
-      <PageFilters />
+      <PageFilters name="Menu"/>
       <Flex flexDirection="column" gap="20px">
         <Link
           to={`question/`}

@@ -11,6 +11,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
+import useModalStore from "../hooks/useModalStore";
 
 interface Props {
   onClose: () => void;
@@ -18,7 +19,9 @@ interface Props {
   variant: "drawer" | "sidebar";
 }
 
-const SidebarContent = () => (
+const SidebarContent = () => {
+  const { openModal } = useModalStore();
+  return (
   <VStack justify="center" align="center">
     <Image src={logo} alt="logo" boxSize="50px" marginBottom={3} />
     <Button w="90%">Home</Button>
@@ -27,8 +30,9 @@ const SidebarContent = () => (
     <Button w="90%">Syllabus</Button>
     <Button w="90%">About</Button>
     <Button w="90%">Contact</Button>
+    <Button w="90%" onClick={openModal}>Login</Button>
   </VStack>
-);
+);}
 
 const Sidebar = ({ isOpen, variant, onClose }: Props) => {
   return variant === "sidebar" ? (

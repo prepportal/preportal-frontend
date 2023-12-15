@@ -9,7 +9,7 @@ const QuestionPaperPage = () => {
     const { data } = useQuestionPapers(subject_id);
     return (
       <>
-        <PageFilters />
+        <PageFilters name='Question Papers'/>
         <TableContainer>
           <Table variant='simple'>
             <Thead>

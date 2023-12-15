@@ -16,7 +16,7 @@ const SemesterPage = () => {
 
   return (
     <>
-      <PageFilters />
+      <PageFilters name="Semesters"/>
       <Center>
         <SimpleGrid
           columns={{ sm: 1, md: 2, lg: 2, xl: 4 }}

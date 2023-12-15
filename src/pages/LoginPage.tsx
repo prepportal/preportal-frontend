@@ -8,21 +8,21 @@ import {
   HStack,
   Checkbox,
   Button,
-  useDisclosure,
   Modal,
   ModalBody,
   ModalContent,
   ModalOverlay,
 } from "@chakra-ui/react";
 import React from "react";
+import useModalStore from "../hooks/useModalStore";
 
 const LoginPage = () => {
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
+  const { isOpen, closeModal } = useModalStore();
   const initialRef = React.useRef(null);
   return (
     <Modal
       isCentered
-      onClose={onClose}
+      onClose={closeModal}
       isOpen={isOpen}
       motionPreset="slideInBottom"
     >

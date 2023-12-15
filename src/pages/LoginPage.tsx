@@ -42,11 +42,11 @@ const LoginPage = () => {
                 <Text>Enter following credentials to Login</Text>
               </VStack>
 
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>E-mail</FormLabel>
                 <Input ref={initialRef} variant="outline"></Input>
               </FormControl>
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>Password</FormLabel>
                 <Input type="password" variant="outline"></Input>
               </FormControl>

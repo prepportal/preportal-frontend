@@ -14,7 +14,7 @@ const BranchPage = () => {
 
   return (
     <>
-      <PageFilters />
+      <PageFilters name="Branches"/>
       <Flex flexDirection="column" gap="20px">
         {data?.response.map((stream) => (
           <Link

@@ -1,42 +1,49 @@
-import {Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
-import { Link, useLocation } from "react-router-dom";
-import PageFilters from "../components/PageFilters";
-import UseSubjects from "../hooks/UseSubjects";
+import {Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button } from "@chakra-ui/react";
+
 
 const SubjectPage = () => {
-  const location = useLocation();
-  const { branch_id, semester_id } = location.state;
-  console.log(branch_id, semester_id)
-  const { data } = UseSubjects(branch_id, semester_id);
+  
   return (
     <>
-      <PageFilters name="Subjects"/>
       <TableContainer>
-        <Table variant='simple'>
+        <Table variant='striped' colorScheme='purple'>
           <Thead>
             <Tr>
-              <Th>Name</Th>
-              <Th>Code</Th>
+              <Th color='powderblue'>Subjects</Th>
+              <Th color='powderblue'>Link</Th>
             </Tr>
           </Thead>
           <Tbody>
-            {
-              data?.response.map((sub) => (
-                <Tr>
-                  <Link to={`${sub.code}/`} key={sub.code} state={{subject_id: sub.id}}>
-                  <Td>{sub.name}</Td>
-                  </Link>
-                  <Td>{sub.code}</Td>
-                </Tr>
-              ))
-            }
-          </Tbody>
-          <Tfoot>
             <Tr>
-              <Th>Name</Th>
-              <Th>Code</Th>
+              <Td>ENGINEERING MECHANICS (EST100)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
             </Tr>
-          </Tfoot>
+            <Tr>
+              <Td>BASICS OF CIVIL AND MECHANICAL ENGINEERING (EST120)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+            <Tr>
+              <Td>ENGINEERING PHYSICS A (PHT100)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+            <Tr>
+              <Td>LINEAR ALGEBRA AND CALCULUS (MAT101)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+            <Tr>
+              <Td>LIFE SKILLS (HUN101)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+            <Tr>
+              <Td>BASICS OF ELECTRICAL AND ELECTRONICS ENGINEERING (EST130)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+            <Tr>
+              <Td>ENGINEERING GRAPHICS (EST110)</Td>
+              <Td><Button variant='link' color='powderblue' fontWeight={"bold"}>Open</Button></Td>
+            </Tr>
+          </Tbody>
+
         </Table>
       </TableContainer>
     </>

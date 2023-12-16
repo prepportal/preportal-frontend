@@ -15,6 +15,13 @@ const RegisterPage = () => {
             <VStack spacing={4} align='flex-start' w='full'>
                 <VStack spacing={2} align={['flex-start','center']} w='full'>
                     <Heading color='teal.500'>Register</Heading>
+                    <Text>
+                        Already have an account,  
+                        <Button variant='link' color='pink.400'>
+                            Login Now!
+                        </Button>
+                    </Text>
+                    <Text color='darkorchid' fontWeight='bold'>OR</Text>
                     <Text>Enter following credentials to Register</Text>
                 </VStack>
 
@@ -83,12 +90,7 @@ const RegisterPage = () => {
                 <Button colorScheme='purple' w='full' fontWeight='bold'>
                     Register
                 </Button>
-                <Text>
-                    Already have an account,  
-                    <Button variant='link' color='pink.400'>
-                        Login Now!
-                    </Button>
-                </Text>
+                
             </VStack>
         </Box>
     )

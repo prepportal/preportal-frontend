@@ -4,8 +4,8 @@ import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 import { Outlet } from "react-router-dom";
 
-
-const Layout = () => {const isDrawerSidebar = useBreakpointValue({
+const Layout = () => {
+  const isDrawerSidebar = useBreakpointValue({
     base: true,
     lg: false,
   });
@@ -21,10 +21,10 @@ const Layout = () => {const isDrawerSidebar = useBreakpointValue({
       }}
       templateColumns={{
         base: "1fr",
-        lg: "300px 1fr",
+        lg: "1fr 4fr",
       }}
     >
-      <GridItem area="nav" paddingX={3}>
+      <GridItem area="nav">
         <NavBar DrawerType={variant} onShowSidebar={toggleSidebar} />
       </GridItem>
       <GridItem area="aside">
@@ -35,10 +35,10 @@ const Layout = () => {const isDrawerSidebar = useBreakpointValue({
         />
       </GridItem>
       <GridItem area="main" paddingX={3}>
-        <Outlet />
+          <Outlet />
       </GridItem>
     </Grid>
   );
-}
+};
 
-export default Layout
+export default Layout;

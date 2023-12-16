@@ -2,11 +2,13 @@ import {Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button } from "@chakra-
 
 
 const SubjectPage = () => {
-  
+ 
   return (
     <>
+      
+
       <TableContainer>
-        <Table variant='striped' colorScheme='purple'>
+        <Table variant='striped' colorScheme='purple' size='sm'>
           <Thead>
             <Tr>
               <Th color='powderblue'>Subjects</Th>

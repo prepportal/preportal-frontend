@@ -6,7 +6,7 @@ const SubjectPage = () => {
       <Text color="blueviolet" fontWeight="bold" textAlign="center">
         Subjects
       </Text>
-      <Stack spacing={4} w="80%" align="center">
+      <Stack spacing={5} w="80%" align="center">
         <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
           ENGINEERING MECHANICS (EST100)
         </Button>

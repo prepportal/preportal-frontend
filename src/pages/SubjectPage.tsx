@@ -1,79 +1,35 @@
-import {Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button } from "@chakra-ui/react";
+import {Button, Stack, Text } from "@chakra-ui/react";
 
 const SubjectPage = () => {
- 
   return (
-    <>
-      
-
-      <TableContainer>
-        <Table variant='unstyled' colorScheme='purple'>
-          <Thead>
-            <Tr>
-              <Th color='blueviolet' style={{ textAlign: 'center' }}>Subjects</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>
-                <Button variant='outline'  borderColor='purple' fontWeight={"bold"} w='full'>
-                  ENGINEERING MECHANICS (EST100)
-                </Button>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline'  borderColor='purple' fontWeight={"bold"} w='full'>
-                  BASICS OF CIVIL AND MECHANICAL ENGINEERING (EST120)
-                </Button>
-              </Td> 
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline'  borderColor='purple' fontWeight={"bold"} w='full'>
-                  ENGINEERING PHYSICS A (PHT100)
-                </Button>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline' borderColor='purple' fontWeight={"bold"} w='full'>
-                  LINEAR ALGEBRA AND CALCULUS (MAT101)
-                </Button>
-              </Td> 
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline' borderColor='purple' fontWeight={"bold"} w='full'>
-                  LIFE SKILLS (HUN101)
-                </Button>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline'  borderColor='purple' fontWeight={"bold"} w='full'>
-                  BASICS OF ELECTRICAL AND ELECTRONICS ENGINEERING (EST130)
-                </Button>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Button variant='outline'  borderColor='purple' fontWeight={"bold"} w='full'>
-                  ENGINEERING GRAPHICS (EST110)
-                </Button>
-              </Td>
-            </Tr>
-
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </>
+    <Stack spacing={4} p={4} align="center">
+      <Text color="blueviolet" fontWeight="bold" textAlign="center">
+        Subjects
+      </Text>
+      <Stack spacing={4} w="80%" align="center">
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          ENGINEERING MECHANICS (EST100)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          BASICS OF CIVIL AND MECHANICAL ENGINEERING (EST120)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          ENGINEERING PHYSICS A (PHT100)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          LINEAR ALGEBRA AND CALCULUS (MAT101)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          LIFE SKILLS (HUN101)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          BASICS OF ELECTRICAL AND ELECTRONICS ENGINEERING (EST130)
+        </Button>
+        <Button variant="solid" colorScheme='purple' fontWeight="bold" w="100%">
+          ENGINEERING GRAPHICS (EST110)
+        </Button>
+      </Stack>
+    </Stack>
   );
 };
 
